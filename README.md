@@ -2,36 +2,26 @@
 
 **A Registration-Free and Slope-aware Framework for CBCT-based Dental Implant Planning**
 
-ImplantFairy is the first comprehensive dental implant dataset constructed **without** pre-/post-operative scan registration. It contains **1,622 CBCT scans** (1,369 training / 253 test, split at the patient level) with voxel-level 3D annotations of implant position, collected from the Department of Stomatology at Shenzhen University General Hospital. All scans are acquired with a KaVo 3D eXam system at an isotropic voxel resolution of 0.2 mm.
+ImplantFairy is a dental implant dataset constructed without pre-/post-operative scan registration. It contains **1,622 implant-specific CBCT samples** with voxel-level 3D annotations of implant position, collected from the Department of Stomatology at Shenzhen University General Hospital. The scans were acquired with a KaVo 3D eXam system at an isotropic voxel resolution of 0.2 mm.
 
-## Download
+## Dataset access
 
-| Split | Scans | Size | Access |
-|-------|-------|------|--------|
-| Test set | 253 | ~25 GB | [Google Drive](https://drive.google.com/drive/folders/1kDhMiK2ipAVcFJeOBE43OpJ0Eo2tebZe?usp=drive_link) |
-| Training set | 1,369 | ~135 GB | Upon request (academic, non-commercial use only). Email: `xinquanyang99@gmail.com` |
+To request access to the ImplantFairy dataset, please complete and sign the [Dataset Access Application Form (PDF)](ImplantFairy_Dataset_Access_Application.pdf) and email it to **xinquanyang99@gmail.com**. Please identify your institution, company, or university and describe the proposed research use in the form.
 
-To request the training set, please send an email with your affiliation and a brief description of the intended use. By requesting access, you agree to use the data solely for academic research and not for any commercial purpose.
+Access requests are reviewed individually. The dataset is available for **research use only**; commercial use is not permitted under this application.
 
-## Data Format
+## Data format
 
-Each scan is a `.nii.gz` volume. For each implant, clinicians annotated three landmarks along the implant's longitudinal axis (vertex, midpoint, and base point), which are converted into a cylindrical 3D mask. The directory layout is:
-
-```
-├── mask/     # CBCT volume with the implant region masked
-└── label/    # corresponding binary implant mask
-```
-
-The implant mask covers the implant body and a surrounding region of ~7--9 mm, so that the model predicts the implant position solely from the surrounding oral anatomy (adjacent teeth, alveolar ridge, and bone density).
+The CBCT volumes and implant-position masks are stored in NIfTI (`.nii.gz`) format. The data include masked CBCT inputs and corresponding binary implant-position labels. Documentation for the supplied data is provided to approved applicants.
 
 ## Citation
 
 If you use ImplantFairy in your research, please cite:
 
-```
-<TODO: 论文完整引用，接收后填卷期页码>
+```text
+<TODO: Add the final paper citation after publication.>
 ```
 
-## License
+## Use conditions
 
-The dataset and code are released for academic research purposes only. Commercial use requires a separate agreement.
+Dataset access is subject to approval of the application. Approved use is limited to the research purpose stated in the application and excludes commercial use.
